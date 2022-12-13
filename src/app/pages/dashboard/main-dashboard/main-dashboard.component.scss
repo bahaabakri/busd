@@ -1,0 +1,36 @@
+@use 'src/custom-style/variables.scss' as c;
+.profileData {
+    padding: 10px;
+    .imageParent {
+        width: 120px;
+        height: 120px;
+        padding: 0;
+        .imageElement {
+            width: 100%;
+            height: 100%;
+            border: 7px solid c.$body_background;
+            outline: 4px solid #bb5d42;
+            border-radius: 50%;
+        }
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            background-color: #bb5d42;
+            width: 50px;
+            height: 50px;
+            border: 7px solid c.$body_background;
+            border-radius: 50%;
+            right: -15px;
+            bottom: -5px;
+        }
+    }
+}
+.profileLink {
+    .link {
+        a {
+            color:#406aff;
+            text-decoration: none;
+        }
+    }
+}

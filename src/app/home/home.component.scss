@@ -1,0 +1,39 @@
+
+/* Content*/
+.header {
+    background-image: linear-gradient(#198754, #ddd);
+    border-radius: 20px;
+    padding: 20px;
+    height: 200px;
+    margin: 10px 0;
+    color: #fff;
+    
+}
+.accountPreview {
+    .idInputContainer {
+        display: flex;
+        justify-content: space-between;
+        
+        .idInputGrandParent {
+            // flex-basis: 60rem;
+            flex-basis: 65%;
+            .idInputParent {
+                display: flex;
+                justify-content: space-between;
+                .idInput {
+                    flex-basis: 80%;
+                }
+
+            }
+        }
+        .idCheckDemo {
+            // flex-shrink: 1;
+            flex-basis: 25%;
+
+        }
+    }
+}
+.recentActivity {
+
+}
+

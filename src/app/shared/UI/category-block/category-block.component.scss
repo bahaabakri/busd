@@ -1,0 +1,17 @@
+@use 'src/custom-style/variables.scss' as c;
+.element {
+    // background-color: --var(cart_background);
+    // background-image: linear-gradient(c.$cart, #7737ff);
+    .blocks {
+        width: 200px;
+        .block {
+            height: 30px;
+            width: 30px;
+            border-radius: 5px;
+            margin: 2px;
+        }
+    }
+    .previewButton {
+        align-self: flex-end;
+    }
+}

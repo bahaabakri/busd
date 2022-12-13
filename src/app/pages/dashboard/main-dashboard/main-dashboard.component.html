@@ -1,0 +1,94 @@
+<div class="tw-grid lg:tw-grid-cols-2 lg:tw-gap-2 tw-mt-5">
+    
+    <div class="profileData">
+
+        <div class="tw-flex tw-justify-start">
+            <div class="imageParent">
+                <img class="imageElement" src="/assets/images/avatar.png" alt="Avatar" />
+            </div>
+            <div class="tw-mx-5">
+                <div class="tw-flex tw-gap-3 tw-justify-start">
+                    <div class="title tw-font-bold tw-text-xl">vikask9690</div>
+                    <div class="idLink tw-text-blue-700 tw-text-lg">256757</div>
+                </div>
+    
+                <div class="hexCode tw-font-bold tw-text-lg tw-my-3 tw-flex tw-gap-2">
+                    <div>{{'0x5456FA5D45' | reduceStringSize}}</div>
+                    <div><fa-icon [icon]="faCopy"></fa-icon></div>
+                </div>
+                <div class="invitationTime tw-flex tw-gap-3 tw-justify-between">
+
+                    <div class="tw-text-gray-500 tw-font-semibold">
+                        invited 12.11.2022 by
+                    </div>
+                    <div class="">
+                        <a href="#" target="_blank" class="generalLink" >256757</a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="profileLink cardElement indigoBg">
+        <div class="title tw-flex tw-gap-2">
+            <div class="tw-text-gray-500 tw-font-semibold">Personal Link</div>
+            <div><fa-icon [icon]="faCircleQuestion"></fa-icon></div>
+         
+        </div>
+        <div class="link tw-flex tw-gap-3">
+            <div><a href="#" target="_blank" class="tw-text-blue-700 tw-text-lg" >forsage.io/b/y8zd3b</a></div>
+            <div class="tw-leading-8"><fa-icon [icon]="faCopy"></fa-icon></div>
+        </div>
+        <hr>
+        <div class="signupMessage tw-flex tw-justify-between">
+            <div class="tw-text-gray-500 tw-font-semibold">
+                Not a member yet? Sign up with this upline
+            </div>
+            <button class="tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-2xl">
+                Sign Up
+            </button>
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<div class="tw-grid lg:tw-grid-cols-6 lg:tw-gap-6 md:tw-grid-cols-3 md:tw-gap-3 sm:tw-grid-cols-1 sm:tw-gap-1 tw-mt-5">
+    <div  class="">
+        <stats-numbers></stats-numbers>
+    </div>
+    <div  class="">
+        <stats-numbers></stats-numbers>
+    </div>
+    <div  class="">
+        <stats-numbers></stats-numbers>
+    </div>
+
+    <div  class="md:tw-col-span-3">
+        <stats-numbers-and-chart></stats-numbers-and-chart>
+    </div>
+    
+</div>
+<div class="tw-mt-5 ">
+    <h2 class="tw-font-bold tw-text-lg">Forsage Programs:
+    </h2>
+    <div class="tw-grid md:tw-grid-cols-2 md:tw-gap-2">
+            <category-block [cat]="'x3'" [busd]="7160" [allBlocksNumber]="12" [activesBlocksNumber]="9" [color]="'#7737ff'" ></category-block>
+            <category-block [cat]="'x4'" [busd]="7160" [allBlocksNumber]="12" [activesBlocksNumber]="7" [color]="'#406aff'"></category-block>
+            <category-block [cat]="'xXx'" [busd]="7160" [allBlocksNumber]="12" [activesBlocksNumber]="3" [color]="'#d03a94'"></category-block>
+            <category-block [cat]="'xGold'" [busd]="7160" [allBlocksNumber]="15" [activesBlocksNumber]="5" [color]="'#ffa243'"></category-block>
+
+    </div>
+
+</div>
+<div class="tw-mt-5">
+    <div class="tw-text-xl tw-font-bold">Platform Recent Activity: <fa-icon [icon]="faCircleQuestion"></fa-icon></div>
+    <stats-and-table></stats-and-table>
+</div>
+                                   

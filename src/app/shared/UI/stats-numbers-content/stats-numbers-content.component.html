@@ -1,0 +1,22 @@
+<ng-container>
+    <div class="title tw-flex tw-gap-2">
+        <div class="tw-text-gray-500 tw-font-semibold">Member total</div>
+        <div><fa-icon [icon]="faCircleQuestion"></fa-icon></div>
+      </div>
+      <div class="tw-mt-5">
+        <div class="tw-font-bold tw-text-xl tw-my-3">
+          {{'899411' | number}}
+       </div>
+       <div *ngIf="isUp; else down" class="tw-text-green-500">
+         <fa-icon class="upIcon "  [icon]="faArrowUp"></fa-icon>
+         <span class="tw-mx-2 tw-text-green-500">{{'2577' | number}}</span>
+       </div>
+       <ng-template #down>
+          <div class="tw-text-red-500">
+            <fa-icon class="downIcon" [icon]="faArrowDown"></fa-icon>
+            <span class="tw-mx-2 tw-text-red-500">{{'2577' | number}}</span>
+          </div>
+  
+        </ng-template>
+      </div>
+</ng-container>

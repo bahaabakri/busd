@@ -1,0 +1,29 @@
+.statisticsAndTable {
+    .tableCustom {
+        flex-basis: 65%;
+        overflow: auto;
+        // height: 600px;
+        .list {
+            max-height: 650px;
+            overflow: scroll;
+        }
+
+        .tableItem {
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+            padding: 5px;
+
+        }
+    }
+    .statistics {
+        flex-basis: 25%;
+        .busd {
+            // height: 200px;
+        }
+        .busdContracts {
+            // height: 600px;
+        }
+    }
+
+}

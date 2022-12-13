@@ -1,0 +1,79 @@
+<div class="statisticsAndTable lg:tw-grid lg:tw-grid-cols-12 lg:tw-gap-3">
+
+    <div class="cardElement grayBg tableCustom lg:tw-col-span-8">
+      <div class="list">
+        <ng-container *ngFor="let item of titles; let i = index">
+          <div *ngIf="i<maxListElements">
+            <div class="tableItem" >
+              <div>
+                <fa-icon [icon]="item.icon"></fa-icon>
+                {{item.title}}
+              </div>
+              <div>
+                <fa-icon [icon]="faExternalLink"></fa-icon>
+                {{item.time}}
+              </div>
+            </div>
+            <hr>
+          </div>
+  
+        </ng-container>
+      </div>
+
+      <div class="grayBg tw-h-10">
+        <button class="tw-w-full tw-rounded tw-px-5 tw-bg-gray-700 hover:tw-bg-gray-500 tw-font-bold  tw-h-full" (click)="showMore()">
+          
+          <fa-icon [icon]="faeye"></fa-icon>
+          <span class="tw-ml-2">See more </span> 
+        </button>
+      </div>
+
+    </div>
+    <div class="statistics lg:tw-col-span-4">
+
+      <stats-numbers></stats-numbers>
+      <stats-numbers></stats-numbers>
+      <div class=" busdContracts cardElement grayBg">
+        <div class="title tw-flex tw-gap-2">
+          <div class="tw-text-gray-500 tw-font-semibold tw-text-lg">Forsage BUSD Contracts          </div>
+          <div><fa-icon [icon]="faCircleQuestion"></fa-icon></div>
+        </div>
+        <div class="tw-mt-5">
+          <div class="tw-flex tw-justify-between">
+            <div class="tw-text-gray-500">x3/x4</div>
+            <div class="tw-flex tw-gap-2">
+              <div><span>{{'0xf545ca68' | reduceStringSize}}</span></div>
+              <div><fa-icon [icon]="faCopy"></fa-icon></div>
+              <div><fa-icon [icon]="faLink"></fa-icon></div>
+            </div>
+          </div>
+          <hr>
+          <div class="tw-flex tw-justify-between">
+            <div class="tw-text-gray-500">xXx</div>
+            <div class="tw-flex tw-gap-2">
+              <div><span>{{'0xf545ca68' | reduceStringSize}}</span></div>
+              <div><fa-icon [icon]="faCopy"></fa-icon></div>
+              <div><fa-icon [icon]="faLink"></fa-icon></div>
+            </div>
+          </div>
+          <hr>
+          <div class="tw-flex tw-justify-between">
+            <div class="tw-text-gray-500">xGold</div>
+            <div class="tw-flex tw-gap-2">
+              <div><span>{{'0xf545ca68' | reduceStringSize}}</span></div>
+              <div><fa-icon [icon]="faCopy"></fa-icon></div>
+              <div><fa-icon [icon]="faLink"></fa-icon></div>
+            </div>
+          </div>
+          <hr>
+          <div class="">
+            <stats-numbers-content></stats-numbers-content>
+          </div>
+          <hr>
+          <div class="">
+            <stats-numbers-content></stats-numbers-content>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

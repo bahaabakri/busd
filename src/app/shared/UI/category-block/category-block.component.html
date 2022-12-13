@@ -1,0 +1,22 @@
+<div class="cardElement element" [ngStyle]="{'background-image': 'linear-gradient(#242526, ' + this.color + ')' }">
+    <div class="tw-flex tw-justify-between">
+        <div class="title">{{cat}}</div>
+        <div class="amount">{{busd | number}} BUSD</div>
+    </div>
+    <div class="tw-flex tw-justify-between tw-mt-5">
+        <div class="tw-flex tw-flex-wrap tw-justify-start tw-gap-1 blocks">
+            <div class="block" [ngClass]="el === 1 ? 'tw-bg-blue-500' : 'tw-bg-gray-500 tw-bg-opacity-50'" *ngFor="let el of activesBlocksArray">
+
+                
+            </div>
+        </div>
+
+        <div class="previewButton">
+            <button class=" tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded" [ngStyle]="{'background-color': this.color }">
+                Preview
+            </button>
+        </div>
+        
+
+    </div>
+</div>

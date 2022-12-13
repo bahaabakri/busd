@@ -1,0 +1,19 @@
+
+<div>
+    <div class="tw-flex tw-flex-col tw-items-center tw-h-full tw-overflow-hidden tw-text-gray-400 tw-rounded">
+		<a class="removeLinkStyles tw-flex tw-items-center tw-w-full tw-px-3 tw-mt-3 ">
+			<svg class="tw-w-8 tw-h-8 tw-fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+				<path d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
+			</svg>
+			<span class="tw-ml-2 tw-text-sm tw-font-bold">The App</span>
+		</a>
+		<div class="tw-w-full tw-px-2">
+			<div class="tw-flex tw-flex-col tw-items-center tw-w-full tw-mt-3 tw-border-t tw-border-gray-700">
+				<a  *ngFor="let item of menu" class="removeLinkStyles tw-flex tw-items-center  tw-w-full tw-h-12 tw-px-3 tw-mt-2 tw-rounded hover:tw-bg-gray-700 hover:tw-text-gray-300" [routerLink]="item.path">
+                    <fa-icon [icon]="item.icon"></fa-icon>
+					<span class="tw-ml-2 tw-text-sm tw-font-medium">{{item.title}}</span>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>

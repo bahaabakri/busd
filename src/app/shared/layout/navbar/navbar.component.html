@@ -1,0 +1,67 @@
+
+<!--I have used bootstrap navbar here for solving responsive issues and i've merged some style with tailwind-->
+<nav class="navbar navbar-expand-md tw-bg-blue-500 tw-p-2 tw-m-2 tw-rounded">
+    <a class="navbar-brand tw-text-white" href="#">Navbar</a>
+    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+  
+    <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav tw-w-full tw-justify-end">
+        <li class="nav-item">
+            <div class="tw-flex tw-justify-between">
+                <input class="tw-shadow tw-appearance-none tw-border tw-rounded tw-w-full tw-mx-2 tw-py-2 tw-px-3 tw-text-gray-700 tw-leading-tight focus:tw-outline-none focus:tw-shadow-outline" id="username" type="text" placeholder="Username">
+                <button class="tw-bg-blue-600  tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded">
+                    Go
+                </button>
+            </div>
+
+        </li>
+        <li class="nav-item">
+            <button class="tw-bg-slate-800 hover:tw-bg-indigo-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded">
+                Connect Wallet
+            </button>
+        </li>
+        <li class="nav-item">
+            <button class="tw-bg-blue-800 hover:tw-bg-blue-400 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-full" (click)="navicateToHome()">
+                <fa-icon [icon]="faClose"></fa-icon>
+            </button>
+        </li>
+        <ng-container *ngIf="isMobile">
+          <li class="nav-item" *ngFor="let item of menu">
+            <a class="removeLinkStyles tw-flex tw-items-center  tw-w-full tw-h-12 tw-px-3 tw-mt-2 tw-rounded hover:tw-bg-gray-700 hover:tw-text-gray-300" [routerLink]="item.path">
+                <fa-icon [icon]="item.icon"></fa-icon>
+                <span class="tw-ml-2 tw-text-sm tw-font-medium">{{item.title}}</span>
+            </a>
+        </li>
+        </ng-container>
+
+
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- <nav class="navbar navbar-expand-md navbar-light bg-light">
+    <button class="navbar-toggler navbar-toggler-right" type="button" (click)="isNavbarCollapsed = !isNavbarCollapsed" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="#">Navbar</a>
+    <div [ngbCollapse]="isNavbarCollapsed" class="navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#">Disabled</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </nav> -->
