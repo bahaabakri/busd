@@ -1,0 +1,33 @@
+<div>
+    <p>Full guide and detailed explanation of Forsage and the programs in easy-to-share PDF presentation available in many world languages.</p>
+    <div class="md:tw-grid md:tw-gap-2 md:tw-grid-cols-2">
+        
+        <div 
+            *ngFor="let el of data"
+            class="tw-bg-neutral-700 tw-p-3 tw-m-2 tw-flex tw-justify-between tw-gap-2 tw-rounded-lg ">
+            <div class="tw-flex tw-justify-between tw-gap-2">
+                <div class="tw-flex tw-justify-start tw-gap-2">
+                    <span class="fi fis tw-rounded-full tw-w-5 tw-h-5 tw-leading-8" [ngClass]="el.flag"></span>
+                </div>
+                <div #link>
+                    {{el.title}}
+                </div>
+            </div>
+            <div class="tw-flex tw-justify-between tw-gap-2">
+                <div class="tw-text-white tw-bg-blue-500 tw-rounded-full tw-p-1">
+                    <fa-icon [icon]="faImport"></fa-icon>
+                </div>
+                <div class="tw-text-white tw-bg-blue-500 tw-rounded-full tw-p-1 tw-cursor-pointer"
+                    (click)="globalService.applyCopy(link)"
+                >
+                    <fa-icon [icon]="faCopy"></fa-icon>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+

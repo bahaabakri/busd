@@ -1,0 +1,29 @@
+<div>
+    <p>Promo videos to share with your partners and introduce them to Forsage or to use them for your own landing page.
+    </p>
+    <div class="md:tw-grid md:tw-gap-2 md:tw-grid-cols-2">
+        
+        <div 
+            *ngFor="let el of data"
+            class="tw-bg-neutral-700 tw-p-3 tw-m-2 tw-rounded-lg ">
+            <div class="tw-flex tw-justify-center tw-items-center tw-max-h-56">
+                <div class="">
+                    <iframe class="tw-h-full tw-w-full" [src]="el.video | safe" title="🔥 We can change our life for the better. We are FORSAGE.io" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                
+            </div>
+            <div class="">
+                <div class="tw-text-center tw-my-2">
+                    {{el.title}}
+                </div>
+                <div class="tw-bg-neutral-500 tw-p-3 tw-m-2 tw-flex tw-gap-2 tw-rounded-lg tw-text-neutral-300" style="word-break: break-word;">
+                    {{el.video}}                    
+                </div>
+            </div>
+
+            
+
+        </div>
+    </div>
+</div>
+

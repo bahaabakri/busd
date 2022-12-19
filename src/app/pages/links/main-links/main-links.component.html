@@ -1,1 +1,47 @@
-<p>main-links works!</p>
+
+<ng-container>
+    <table-header-filter [userId]="globalService.userId" [wihtoutFilter]="true" [title]="'links'"></table-header-filter>
+  </ng-container>
+
+  <div class="lg:tw-grid lg:tw-grid-cols-2 lg:tw-gap-4 tw-mt-5">
+    <div class="cardElement grayBg">
+        <bar-chart></bar-chart>
+    </div>
+    <div class="tw-grid lg:tw-grid-cols-3 lg:tw-gap-2 md:tw-grid-cols-3 md:tw-gap-2">
+        <div  class="">
+            <stats-numbers></stats-numbers>
+        </div>
+        <div  class="">
+            <stats-numbers></stats-numbers>
+        </div>
+        <div  class="">
+            <stats-numbers></stats-numbers>
+        </div>
+        <div  class="lg:tw-col-span-3 md:tw-col-span-3">
+            <stats-numbers-and-chart></stats-numbers-and-chart>
+        </div>
+
+    </div>
+    <div class="profileLink cardElement indigoBg lg:tw-col-span-3">
+        <div class="title tw-flex tw-gap-2">
+            <div class="tw-text-gray-500 tw-font-semibold">Personal Link</div>
+            <div><fa-icon [icon]="faCircleQuestion"></fa-icon></div>
+         
+        </div>
+        <div class="link tw-flex tw-justify-between tw-gap-2">
+            <div><a #link href="https://forsage.io/b/y8zd3b" target="_blank" class="tw-text-blue-700 tw-text-lg" >forsage.io/b/y8zd3b</a></div>
+            <div>
+                <button class="tw-bg-blue-500 hover:tw-bg-blue-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-2xl"
+                    (click)="globalService.applyCopy(link)">
+                    Copy
+                    <fa-icon [icon]="faCopy"></fa-icon>
+                </button>
+            </div>
+
+        </div>
+
+
+    </div>
+
+  </div>
+

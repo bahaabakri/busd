@@ -16,6 +16,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { StatsNumbersContentComponent } from './UI/stats-numbers-content/stats-numbers-content.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { MainTableComponent } from './UI/main-table/main-table.component';
+import { MatTableModule } from '@angular/material/table';
+import { BarChartComponent } from './charts/bar-chart/bar-chart.component';
+import { FormsModule } from '@angular/forms';
+import { TableHeaderFilterComponent } from './UI/table-header-filter/table-header-filter.component';
+import { SafePipe } from 'src/_pipes/safe-url.pipe';
+import { ManipulateCategoryPipe } from 'src/_pipes/manipulate-category.pipe';
 
 
 
@@ -29,20 +36,29 @@ import { FooterComponent } from './layout/footer/footer.component';
     StatsAndTableComponent,
     NavbarComponent,
     StatsNumbersContentComponent,
-    FooterComponent
+    FooterComponent,
+    MainTableComponent,
+    BarChartComponent,
+    TableHeaderFilterComponent,
+    SafePipe,
+    ManipulateCategoryPipe
   ],
   imports: [
     CommonModule,
+    FormsModule,
     FontAwesomeModule,
     NgChartsModule,
     NgbModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    RouterModule
+    RouterModule,
+    MatTableModule,
+    MatInputModule,
+    MatButtonModule
   ],
   exports: [
-    // Thoses components are availabe in any module import SharedModule
+    // Thoses components are availabe in any module will import SharedModule
     StatsNumbersComponent,
     StatsNumbersAndChartComponent,
     ReduceStringSize,
@@ -51,7 +67,12 @@ import { FooterComponent } from './layout/footer/footer.component';
     StatsAndTableComponent,
     NavbarComponent,
     StatsNumbersContentComponent,
-    FooterComponent
+    FooterComponent,
+    MainTableComponent,
+    BarChartComponent,
+    TableHeaderFilterComponent,
+    SafePipe,
+    ManipulateCategoryPipe
   ],
   providers:[
     { provide: NgChartsConfiguration, useValue: { generateColors: false }}

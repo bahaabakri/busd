@@ -1,7 +1,7 @@
 
 /* Content*/
 .header {
-    background-image: linear-gradient(#198754, #ddd);
+    background-image: linear-gradient(#0026ff, #ddd);
     border-radius: 20px;
     padding: 20px;
     height: 200px;
@@ -11,24 +11,20 @@
 }
 .accountPreview {
     .idInputContainer {
-        display: flex;
-        justify-content: space-between;
         
         .idInputGrandParent {
             // flex-basis: 60rem;
-            flex-basis: 65%;
+            flex-basis: 60%;
             .idInputParent {
-                display: flex;
-                justify-content: space-between;
                 .idInput {
-                    flex-basis: 80%;
+                    flex-basis: 75%;
                 }
 
             }
         }
         .idCheckDemo {
             // flex-shrink: 1;
-            flex-basis: 25%;
+            flex-basis: 40%;
 
         }
     }

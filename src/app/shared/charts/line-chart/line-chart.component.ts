@@ -13,7 +13,7 @@ export class LineChartComponent {
     datasets: [
       {
         data: this.data,
-        backgroundColor: '#1c2131',
+        backgroundColor: 'rgba(41,49,77,.5)',
         borderColor: '#3b82f6',
         fill: 'origin',
       },

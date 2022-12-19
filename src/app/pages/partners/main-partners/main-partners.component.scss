@@ -1,15 +1,15 @@
 @use 'src/custom-style/variables.scss' as c;
-.pageTitle {
-    color: #fff;
-    margin-top: 20px;
-}
 .tableParent {
+    // overflow: scroll;
     .tableCustom {
         background-color: c.$cart;
         box-shadow: none !important;
 
-        th, td {
+        th {
             color:#aaa;
+        }
+        td {
+            color:#fff
         }
     }
 }

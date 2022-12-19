@@ -18,6 +18,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     //Shared Module
     SharedModule
   ],
-  exports: [SharedModule]
+  exports: [SharedModule],
+  providers: []
 })
 export class DashboardModule { }

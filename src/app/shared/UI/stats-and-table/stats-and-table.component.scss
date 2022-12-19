@@ -1,18 +1,18 @@
 .statisticsAndTable {
     .tableCustom {
         flex-basis: 65%;
-        overflow: auto;
+        overflow-x: hidden;
         // height: 600px;
         .list {
-            max-height: 650px;
-            overflow: scroll;
+            max-height: 700px;
+            overflow: auto;
+            box-sizing: border-box;
+            padding-right: 50px;
+            transform: translatex(50px);
         }
 
         .tableItem {
-            display: flex;
-            justify-content: space-between;
-            margin: 5px;
-            padding: 5px;
+
 
         }
     }

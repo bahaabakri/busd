@@ -63,6 +63,9 @@ div, p, span {
     border-radius: 20px;
     padding: 10px;
 }
+.indigoBgGradiant {
+    background-image: linear-gradient($indigo_background, #555);
+}
 .indigoBg {
     background-color: $indigo_background;
 }

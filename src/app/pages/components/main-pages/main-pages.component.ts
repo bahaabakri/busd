@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { SideMenuComponent } from './side-menu/side-menu.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-main-pages',
@@ -8,5 +8,5 @@ import { SideMenuComponent } from './side-menu/side-menu.component';
 })
 export class MainPagesComponent {
 
-  constructor() {}
+
 }

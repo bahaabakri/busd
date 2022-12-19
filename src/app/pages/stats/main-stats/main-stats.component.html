@@ -1,1 +1,90 @@
-<p>main-stats works!</p>
+
+<ng-container>
+    <table-header-filter [userId]="globalService.userId" [title]="'statstics'"></table-header-filter>
+</ng-container>
+
+
+
+<!-- Table -->
+<div class="cardElement grayBg tableParent">
+    <div class="tw-w-full tw-h-full tw-overflow-auto">
+      <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 tableCustom">
+    
+  
+        <ng-container *ngFor="let col of displayedColumns" [matColumnDef]="col">
+            <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                <ng-container [ngSwitch]="col">
+                    <ng-container *ngSwitchCase="'id'">
+                        {{ col | uppercase }}
+                    </ng-container>
+                    <ng-container *ngSwitchCase="'profitPerType'">
+                        BUSD profit / Type
+                    </ng-container>
+                    <ng-container *ngSwitchDefault>
+                        {{ col | titlecase }}
+                    </ng-container>
+                </ng-container>
+
+            </th>
+            <td mat-cell *matCellDef="let element"> 
+              
+              
+              <ng-container [ngSwitch]="col">
+                <ng-container *ngSwitchCase="'date'">
+                  <div class="tw-text-neutral-400">
+                    {{element[col]}}
+                  </div>
+  
+                </ng-container>
+                <ng-container *ngSwitchCase="'wallet'">
+                  <div class="tw-flex tw-gap-2">
+                    <div><span>{{element[col] | reduceStringSize}}</span></div>
+                    <div>
+                      <fa-icon [icon]="faCopy"></fa-icon>
+                    </div>
+                    <div>
+                      <fa-icon [icon]="faLink"></fa-icon>
+                    </div>
+                  </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="'id'">
+                  <div class="">
+                    <a href="#" target="_blank" class="generalLink" >ID {{element[col]}}</a>
+                  </div>
+                </ng-container>
+                <ng-container *ngSwitchCase="'type'">
+                    <ng-container [ngSwitch]="element[col]">
+                        <ng-container *ngSwitchCase="0">
+                            <div class="tw-bg-orange-500 tw-text-orange-700 tw-rounded-full tw-w-8 tw-h-8 tw-text-center">
+                                <fa-icon class="tw-leading-8" [icon]="faRocket"></fa-icon>
+                            </div>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="1">
+                            <div class="tw-bg-neutral-500 tw-text-neutral-700 tw-rounded-full tw-w-8 tw-h-8 tw-text-center">
+                                <fa-icon class="tw-leading-8" [icon]="faUser"></fa-icon>
+                            </div>
+                            
+                        </ng-container>
+                    </ng-container>
+                  </ng-container>
+                <ng-container *ngSwitchDefault>
+                  {{element[col]}}
+                </ng-container>
+              </ng-container>
+  
+            </td>
+        </ng-container>
+    
+      <tr mat-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row  *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+    <div class="grayBg tw-h-10">
+        <button class="tw-w-full tw-rounded tw-px-5 tw-bg-neutral-700 hover:tw-bg-neutral-500 tw-font-bold  tw-h-full">
+          
+          <fa-icon [icon]="faeye"></fa-icon>
+          <span class="tw-ml-2">See more </span> 
+        </button>
+      </div>
+  
+  </div>

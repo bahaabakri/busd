@@ -2,11 +2,12 @@
     display: flex;
     margin-top: 60px;
     .sideMenu {
+        height: 100vh;
         border-right-width: 1px;
-        @media (min-width: 768px)  {
+        @media (min-width: 1024px)  { // large screens (pc, tv)
             position: fixed;
         }
-        @media (max-width: 768px)  {
+        @media (max-width: 1024px)  { // small screens (mobile, tablet)
             display: none;
         }
         
@@ -14,11 +15,11 @@
         
     }
     .content {
-        @media (min-width: 768px)  {
-            margin-left: 200px;
+        @media (min-width: 1024px)  { // large screens (pc, tv)
+            padding-left: 200px;
         }
-        
         width: 100%;
+        // overflow: scroll;
 
     }
 }

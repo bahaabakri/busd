@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, Inject } from '@angular/core';
+import { faCopy, faCircleQuestion } from '@fortawesome/free-solid-svg-icons';
+import { GlobalService } from 'src/app/_services/global.service';
 
 @Component({
   selector: 'app-main-links',
@@ -6,5 +8,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-links.component.scss']
 })
 export class MainLinksComponent {
+  faCircleQuestion= faCircleQuestion;
+  faCopy = faCopy
+  constructor(@Inject(GlobalService) public globalService:GlobalService) {}
 
 }

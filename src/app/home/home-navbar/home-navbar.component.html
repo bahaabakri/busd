@@ -1,0 +1,18 @@
+<div class="tw-flex tw-justify-between tw-my-4">
+    <div class="tw-text-white">Icon</div>
+    <div *ngIf="!walletService.isWalletConnected">
+      <button class="tw-bg-neutral-700 hover:tw-bg-neutral-500 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-xl"
+      (click)="connectWallet()">
+        Connect Wallet
+    </button>
+    </div>
+
+    <div *ngIf="walletService.isWalletConnected">
+      <button class="tw-bg-red-700 hover:tw-bg-red-500 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-xl"
+      (click)="disconnectWallet()">
+        Disconnect Wallet
+    </button>
+    </div>
+
+
+  </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GlobalService } from 'src/app/_services/global.service';
 import {menuData} from '../../../../../_data/menu-list'
 import {Menu} from '../../../../../_data/menu-list'
 @Component({
@@ -8,7 +9,7 @@ import {Menu} from '../../../../../_data/menu-list'
 })
 export class SideMenuComponent implements OnInit {
   menu: Menu[]
-  constructor() {
+  constructor(public globalService:GlobalService) {
     this.menu = menuData
     console.log(this.menu);
     

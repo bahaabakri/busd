@@ -1,1 +1,25 @@
-<p>main-telegram-bots works!</p>
+
+<ng-container>
+    <table-header-filter [userId]="globalService.userId" [wihtoutFilter]="true" [title]="'telegram bots'"></table-header-filter>
+</ng-container>
+
+
+<div class="cardElement grayBg lg:tw-w-1/2 ">
+    <div>
+
+        <div *ngFor="let el of telegramBotsListData">
+            <div class="tw-flex tw-p-3 tw-m-3  tw-bg-neutral-700 hover:tw-bg-neutral-500 tw-rounded-xl">
+                <div class="icon tw-mx-2 tw-self-center tw-w-8 tw-h-8 ">
+                    <fa-icon class="tw-text-2xl" [icon]="faTelegram"></fa-icon>
+                </div>
+                <div>
+                    <div class="tw-text-white tw-p-2 tw-m-2">{{el.title}}</div>
+                    <div class="tw-text-gray-500 tw-p-2 tw-m-2">{{el.description}}</div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

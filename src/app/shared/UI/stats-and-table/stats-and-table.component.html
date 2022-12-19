@@ -1,14 +1,28 @@
 <div class="statisticsAndTable lg:tw-grid lg:tw-grid-cols-12 lg:tw-gap-3">
 
-    <div class="cardElement grayBg tableCustom lg:tw-col-span-8">
+    <div class="cardElement grayBg tableCustom lg:tw-col-span-8 tw-relative tw-overflow-hidden">
       <div class="list">
-        <ng-container *ngFor="let item of titles; let i = index">
+        <ng-container *ngFor="let item of recentItems; let i = index">
           <div *ngIf="i<maxListElements">
-            <div class="tableItem" >
-              <div>
-                <fa-icon [icon]="item.icon"></fa-icon>
-                {{item.title}}
+            <div class="tw-flex tw-justify-between tw-m-2 tw-p-2" >
+              <div class="tw-flex tw-gap-2">
+                <div class="tw-rounded-full">
+                  <fa-icon [icon]="item.icon"></fa-icon>
+                </div>
+                <div class="tw-flex tw-gap-2">
+                  <div class="">
+                    <a #element (click)="navigateToUserDashboard(item.id)" target="_blank" class="generalLink" >ID {{item.id}}</a>
+                  </div>
+                  <div>
+                    {{item.message}}
+                  </div>
+                  <div *ngIf="item.category" #cat>
+                    {{item.category | manipulateCat : cat}} 
+                  </div>
+  
+                </div>
               </div>
+
               <div>
                 <fa-icon [icon]="faExternalLink"></fa-icon>
                 {{item.time}}
@@ -21,7 +35,7 @@
       </div>
 
       <div class="grayBg tw-h-10">
-        <button class="tw-w-full tw-rounded tw-px-5 tw-bg-gray-700 hover:tw-bg-gray-500 tw-font-bold  tw-h-full" (click)="showMore()">
+        <button class="tw-w-full tw-rounded tw-px-5 tw-bg-neutral-700 hover:tw-bg-neutral-500 tw-font-bold  tw-h-full" (click)="showMore()">
           
           <fa-icon [icon]="faeye"></fa-icon>
           <span class="tw-ml-2">See more </span> 

@@ -1,38 +1,47 @@
+  <!--Home Navbar-->
+
+<ng-container>
+  <home-navbar></home-navbar>
+</ng-container>
+  
+  
   <!--Header-->
-  <div class="header cardElement">
-    <div class="title tw-mb-3">
+  <div class="header cardElement tw-my-4 tw-flex tw-flex-col tw-justify-between">
+    <div class="title tw-mb-3 tw-text-4xl tw-font-bold">
       Forsage BUSD main page</div>
-    <div class="description tw-mb-3">
+    <div class="description tw-mb-3 tw-text-neutral-300">
       Connect wallet to Register or Login
     </div>
     <div class="control">
-        <button class="tw-bg-slate-800 hover:tw-bg-indigo-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded">
+        <button class="tw-bg-neutral-900 hover:tw-bg-neutral-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-xl"
+        [disabled]="walletService.isWalletConnected"
+        (click)="connectWallet()">
           Connect now
         </button>
-        <button class="tw-bg-slate-800 hover:tw-bg-indigo-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded">
+        <button class="tw-bg-blue-700 hover:tw-bg-blue-500 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-xl">
           Help me
       </button>
     </div>
   </div>
   <!--Account preview-->
 
-  <div class="accountPreview">
-    <div class="title tw-mb-3">
+  <div class="accountPreview tw-my-5">
+    <div class="title tw-my-3 tw-text-4xl tw-font-bold">
       Account preview</div>
-    <div class="description tw-mb-3">
+    <div class="description tw-mb-3 tw-text-neutral-500">
       Look up any Forsage BUSD member account in preview mode. Enter ID or BUSD address to preview or click Demo to view a random account.
     </div>
-    <div class="idInputContainer ">
-      <div class="idInputGrandParent cardElement grayBg">
+    <div class="idInputContainer md:tw-flex md:tw-justify-between md:tw-gap-4">
+      <div class="idInputGrandParent cardElement indigoBg">
         <div class="title tw-mb-3">
           Enter ID or BUSD wallet
         </div>
-        <div class="idInputParent">
-          <div class="idInput">
+        <div class="idInputParent sm:tw-flex sm:tw-justify-between sm:tw-gap-4">
+          <div class="idInput tw-my-2">
             <input type="text" class="form-control" placeholder="example:88888">
           </div>
-          <div>
-            <button class="tw-bg-slate-800 hover:tw-bg-indigo-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded">
+          <div class="tw-my-2">
+            <button class="tw-bg-blue-700 hover:tw-bg-blue-500 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded-xl">
               Preview
           </button>
           </div>
@@ -43,7 +52,7 @@
           Don’t know any ID?
         </div>
         <div>
-          <button class="tw-bg-slate-800 hover:tw-bg-indigo-700 tw-text-white tw-font-bold tw-mx-2 tw-py-2 tw-px-4 tw-rounded">
+          <button class="tw-bg-neutral-700 hover:tw-bg-neutral-500 tw-text-white tw-font-bold tw-m-2 tw-p-2 tw-rounded-xl">
             Check Demo
         </button>
         </div>
@@ -52,10 +61,12 @@
   </div>
 
   <!--Recent Activity-->
-  <div class="recentActivity">
-    <div class="title tw-mb-3">
-      Platform Recent Activity</div>
-      <stats-and-table></stats-and-table>
+  <div class="recentActivity tw-my-4">
+    <div class="title tw-flex tw-gap-2 tw-my-3 tw-text-3xl tw-font-bold">
+      <div >Platform Recent Activity</div>
+      <div><fa-icon [icon]="faCircleQuestion"></fa-icon></div>
+    </div>
+    <stats-and-table></stats-and-table>
 
   
   </div>

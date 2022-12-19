@@ -1,25 +1,34 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import {MatTableDataSource } from '@angular/material/table'
+import { faCopy, faLink, faEye} from  '@fortawesome/free-solid-svg-icons';
+import { GlobalService } from 'src/app/_services/global.service';
 
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  weight: number;
-  symbol: string;
+  date: Date;
+  address: string;
+  id: number;
+  x3: number;
+  x4: number;
+  xXx: number;
+  xGold: number;
+  profit: number;
+  partners: number
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {position: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
+  {date: new Date('12 March 2018 14:48 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('21 Jan 2017 21:55 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('31 December 2016 17:45 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('07 November 2015 14:11 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('06 June 2014 22:22 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('22 April 2013 11:52 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('19 October 2013 15:55 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('17 April 2013 11:03 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('07 June 2012 12:12 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('30 April 2012 21:41 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9},
+  {date: new Date('05 June 2011 14:45 UTC'), address: '0xf545ca68', id: 873443, x3: 5, x4: 4, xXx: 7, xGold: 4, profit: 1798, partners: 9}
 ];
 @Component({
   selector: 'app-main-partners',
@@ -27,21 +36,30 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./main-partners.component.scss']
 })
 export class MainPartnersComponent {
+  faCopy = faCopy;
+  faLink = faLink;
+  faeye = faEye;
+
   displayedColumns: string[];
-  dataSource: MatTableDataSource<PeriodicElement>;
-  constructor() {
+  dataSource: MatTableDataSource<any>;
+  manipulatedData
 
-    this.dataSource = new MatTableDataSource(ELEMENT_DATA);
-    this.displayedColumns = ['position', 'name', 'weight', 'symbol'];
+
+  constructor(public globalService: GlobalService) {
+    // change date before bind it to table
+
+    this.manipulatedData = ELEMENT_DATA.map(el => {
+      return {
+        ...el,
+        date: el.date.toISOString(),
+        profit: el.profit + ' BUSD'
+      }
+    })
+    // console.log(ELEMENT_DATA);
+
+
+    this.dataSource = new MatTableDataSource(this.manipulatedData);
+    this.displayedColumns = ['date', 'address', 'id', 'x3', 'x4', 'xXx', 'xGold', 'profit', 'partners'];
   }
 
-  applyFilter(event: any) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase()
-
-  }
-  clearFilter() {
-    
-    this.dataSource.filter = ''
-  }
 }

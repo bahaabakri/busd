@@ -12,3 +12,16 @@
   </div>
   
 </div>
+
+<!--Toast Template -->
+
+<div *ngIf="globalService.isToastShown" class="tw-absolute tw-bottom-0	tw-left-0">
+  <ngb-toast
+  [delay]="3000"
+  [autohide]="true"
+  [ngClass]="{'tw-bg-blue-500' : globalService.status === 'success', 'tw-bg-red-500' : globalService.status === 'danger'  }">
+  <div>
+      {{globalService.toastText}}
+  </div>
+    </ngb-toast>
+  </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalService } from 'src/app/_services/global.service';
 
 @Component({
   selector: 'app-main-information',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./main-information.component.scss']
 })
 export class MainInformationComponent {
-
+constructor(public globalService: GlobalService) {}
 }

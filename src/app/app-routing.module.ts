@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RegistrationComponent } from './auth/registration/registration.component';
 import { HomeComponent } from './home/home.component';
 import {NotFoundComponent} from './not-found/not-found.component'
 import { MainPagesComponent } from './pages/components/main-pages/main-pages.component';
@@ -10,10 +11,14 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'registration',
+    component: RegistrationComponent
+  },
+  {
   path: 'pages',
   component:MainPagesComponent,
   children: [
-    {path:'', redirectTo:'dashboard', pathMatch: 'full'},
+    {path:'', redirectTo:'dashboard', pathMatch:'full'},
     { path: 'dashboard', loadChildren: () => import('./pages/dashboard/dashboard.module').then(m => m.DashboardModule) },
     { path: 'info', loadChildren: () => import('./pages/information/information.module').then(m => m.InformationModule) },
     { path: 'links', loadChildren: () => import('./pages/links/links.module').then(m => m.LinksModule) },
@@ -29,8 +34,8 @@ const routes: Routes = [
 },
 {
   path: '**',
-  redirectTo: '/notFoundPage'
-},
+  redirectTo: 'notFoundPage'
+}
 ]
 
 

@@ -4,9 +4,8 @@ export interface RecentActivites {
     icon:IconDefinition,
     id: number,
     time: string,
-    status:string,
-    category: string | null,
-    busd: number | null
+    message:string,
+    category: string | null
 
 
 }
@@ -15,120 +14,105 @@ export const recent:RecentActivites[]  = [
     icon:faCoffee,
     id: 882493,
     time: '1 minutes',
-    status: 'activites',
-    category: 'xXx',
-    busd: null
+    message: 'activites',
+    category: 'x3'
 },
 {
     icon:faCoffee,
     id: 735295,
     time: '1 minutes',
-    status: 'addition',
-    category: 'xXx',
-    busd: 2.4
+    message: '+ 5 BUSD in',
+    category: 'xXx'
 },
 {
     icon:faCoffee,
     id: 663306,
     time: '3 minutes',
-    status: 'addition',
-    category: 'xXx',
-    busd: 5.6
+    message: '+ 5.6 BUSD in',
+    category: 'x4',
 },
 {
     icon:faCoffee,
     id: 4642623,
     time: '5 minutes',
-    status: 'addition',
-    category: 'xXx',
-    busd: 9.3
+    message: '+ 9.3 BUSD in',
+    category: 'xXx'
 },
 {
     icon:faCoffee,
     id: 548648,
     time: '15 minutes',
-    status: 'addition',
-    category: 'x4',
-    busd: 2.5
+    message: '+ 2.5 BUSD in',
+    category: 'x4'
 },
 {
     icon:faCoffee,
     id: 782165,
     time: '30 minutes',
-    status: 'addition',
-    category: 'x3',
-    busd: 4.6
+    message: '+ 4.6 BUSD in',
+    category: 'x3'
 },
 {
     icon:faCoffee,
     id: 653217,
     time: '35 minutes',
-    status: 'newUser',
-    category: null,
-    busd: null
+    message: 'new user added',
+    category: null
 },
 {
     icon:faCoffee,
     id: 747477,
     time: '45 minutes',
-    status: 'activites',
-    category: 'x3',
-    busd: null
+    message: 'activites',
+    category: 'x3'
 },
 {
     icon:faCoffee,
     id: 545454,
     time: '1 hour',
-    status: 'addition',
-    category: 'xGold',
-    busd: 9.6
+    message: '+ 9.6 BUSD in',
+    category: 'xGold'
 },{
     icon:faCoffee,
     id: 542165,
     time: '1 hour',
-    status: 'addition',
-    category: 'xxx',
-    busd: 3.6
+    message: '+ 3.6 BUSD in',
+    category: 'xXx'
 },
 {
     icon:faCoffee,
     id: 747477,
     time: '1 hour',
-    status: 'activites',
-    category: 'xGold',
-    busd: null
+    message: 'activates',
+    category: 'xGold'
 },
 {
     icon:faCoffee,
     id: 329865,
     time: '1 hour',
-    status: 'addition',
-    category: 'xGold',
-    busd: 1.8
+    message: '+ 1.8 BUSD in',
+    category: 'xGold'
 },
 {
     icon:faCoffee,
     id: 986544,
     time: '2 hours',
-    status: 'addition',
-    category: 'xGold',
-    busd: 5.6
+    message: '+5.6 BUSD in',
+    category: 'xGold'
 },
 {
     icon:faCoffee,
     id: 777777,
     time: '2 hours',
-    status: 'newUser',
-    category: null,
-    busd: null
+    message: 'new user added',
+    category: null
 },
 {
     icon:faCoffee,
     id: 882493,
     time: '2 hours',
-    status: 'activites',
-    category: 'xxx',
-    busd: null
+    message: 'activates',
+    category: 'xxx'
 }
 
 ]

@@ -1,1 +1,28 @@
-<p>main-promo works!</p>
+<ng-container>
+    <table-header-filter [userId]="globalService.userId" [title]="'promo'" [wihtoutFilter]="true"></table-header-filter>
+    <p class="tw-text-gray-500">Expand your Forsage team and get more partners and results by using ready-made promotional materials
+    </p>
+  </ng-container>
+
+  <div class="cardElement grayBg" style="min-height: 70vh;">
+
+    <!--Banner-->
+
+    <div class="tw-flex tw-flex-wrap">
+        <div>
+            <button class="grayBg tw-text-white tw-p-2 tw-m-2 tw-rounded-lg" routerLinkActive="tw-bg-blue-500" routerLink="./presentations" [queryParams]="{user:globalService.userId}">Presentations</button>
+        </div>
+        <div>
+            <button class="grayBg tw-text-white tw-p-2 tw-m-2 tw-rounded-lg" routerLinkActive="tw-bg-blue-500" routerLink="./banners" [queryParams]="{user:globalService.userId}">Baanners</button>
+        </div>
+        <div>
+            <button class="grayBg tw-text-white tw-p-2 tw-m-2 tw-rounded-lg" routerLinkActive="tw-bg-blue-500" routerLink="./fosage" [queryParams]="{user:globalService.userId}">Fosage one-pager</button>
+        </div>
+        <div>
+            <button class="grayBg tw-text-white tw-p-2 tw-m-2 tw-rounded-lg" routerLinkActive="tw-bg-blue-500" routerLink="./videos" [queryParams]="{user:globalService.userId}">Videos</button>
+        </div>
+    </div>
+    <hr class=" tw-border-blue-500">
+    <router-outlet></router-outlet>
+
+  </div>
